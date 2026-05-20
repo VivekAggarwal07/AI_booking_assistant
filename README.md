@@ -139,7 +139,7 @@ Prompt goals:
 
 ---
 
-## Part 3: Implementation - AI-Assisted
+## Part 3: Implementation 
 
 ### Tech Stack
 
@@ -154,7 +154,7 @@ Prompt goals:
 
 Coding assistant:
 
-- GitHub Copilot was used to help implement and refine the application.
+- Codex was used to help implement and refine the application. 110K tokens used.
 
 Application AI model:
 
@@ -215,16 +215,6 @@ streamlit run app.py
 - No bookings available in client or admin views
 - Empty search/filter results in admin dashboard
 - Missing `GROQ_API_KEY` in `.env`
-
-### Suggested Demo Flow
-
-1. Enter a booking request in natural language (e.g., "Book me a haircut on May 25th at 3 PM")
-2. View the booking in "My Bookings"
-3. Delete or manage the booking
-4. Switch to Admin Mode (password: `admin123`)
-5. View all bookings and statistics
-6. Search, filter, and export bookings
-7. Explain the database, authentication, and AI extraction briefly.
 
 ---
 
