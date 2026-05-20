@@ -2,29 +2,19 @@
 
 Chat-based appointment booking system built with Streamlit, SQLite, and an AI extraction layer. Clients can book appointments using natural language or a manual form, reschedule or delete their bookings, and track booking status. Admin users can view, create, update, delete, filter, export, and manage the status of all bookings.
 
-## Submission Checklist
+## Part 1: Problem Understanding
 
-- GitHub repository with project source code
-- README containing all 4 required parts
-- Demo video with voiceover, maximum 5 minutes
-- Do not commit `.env`, `venv/`, `__pycache__/`, or local database files
+Appointment scheduling is frustrating. Users navigate complex forms, and service providers manage bookings manually. This project solves this by letting users book appointments using natural language instead of filling out tedious forms.
 
-## Part 1: Problem Understanding - NO AI
+**The Problem:** Traditional booking systems are time-consuming and error-prone. Users struggle with forms, and admins waste time managing scattered appointment data.
 
-Important: This section must be written by the student without AI tools.
+**The Solution:** Our AI-powered system lets users book appointments conversationally. Simply type "I need a haircut on May 25th at 3 PM for John," and the AI extracts the details automatically and books it.
 
-Write a 150-250 word abstract here. Keep it simple and clear.
+**Who Uses It:** There are two user types. Regular users can quickly book, view, and delete their own appointments. Admins have a comprehensive dashboard to manage all bookings, view statistics, search and filter by service, and export data to CSV.
 
-Cover:
+**Key Workflows:** Users enter appointment requests in natural language, the AI processes and books it, then users can view or delete bookings anytime. Admins log in with a password to access a dashboard showing all bookings, statistics with charts, and management tools.
 
-- What problem this project solves
-- Who the users are
-- Key user flows, such as signing in, booking an appointment, viewing bookings, and admin management
-- Why a natural language booking assistant is useful
-
-Student-written abstract:
-
-TODO: Write your own 150-250 word abstract here without using AI.
+Why It Matters: Natural language removes friction from scheduling. Users don't memorize forms—they simply describe what they need. This makes booking accessible, reduces errors, and saves time for everyone.
 
 ## Part 2: Spec & Plan - 
 
