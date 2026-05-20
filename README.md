@@ -14,11 +14,15 @@ Appointment scheduling is frustrating. Users navigate complex forms, and service
 
 **Key Workflows:** Users enter appointment requests in natural language, the AI processes and books it, then users can view or delete bookings anytime. Admins log in with a password to access a dashboard showing all bookings, statistics with charts, and management tools.
 
-Why It Matters: Natural language removes friction from scheduling. Users don't memorize forms—they simply describe what they need. This makes booking accessible, reduces errors, and saves time for everyone.
+**Why It Matters:** Natural language removes friction from scheduling. Users don't memorize forms—they simply describe what they need. This makes booking accessible, reduces errors, and saves time for everyone.
 
-## Part 2: Spec & Plan - 
+---
+
+## Part 2: Spec & Plan
 
 ### 1. System Design - High-Level
+
+![System Architecture](./images/architecture.svg)
 
 The application has two authenticated roles:
 
@@ -100,7 +104,24 @@ Prompt goals:
 | status | TEXT | Booking status |
 | created_at | TIMESTAMP | Booking creation time |
 
-### 5. Implementation Plan
+### 5. User Workflows
+
+![User Workflows](./images/workflow.svg)
+
+**Client Flow:**
+1. Enter appointment details in natural language
+2. AI extracts booking information
+3. View bookings in personal dashboard
+4. Delete or reschedule as needed
+
+**Admin Flow:**
+1. Login with admin password
+2. Access comprehensive dashboard
+3. View all bookings and statistics
+4. Search, filter, and manage appointments
+5. Export data for reporting
+
+### 6. Implementation Plan
 
 1. Build SQLite database helpers for users and appointments.
 2. Add authentication with password hashing.
@@ -115,6 +136,8 @@ Prompt goals:
 11. Build admin dashboard with CRUD and status operations.
 12. Add sidebar metrics and booking export.
 13. Test client and admin flows.
+
+---
 
 ## Part 3: Implementation - AI-Assisted
 
@@ -131,7 +154,7 @@ Prompt goals:
 
 Coding assistant:
 
-- Codex was used to help implement and refine the application.
+- GitHub Copilot was used to help implement and refine the application.
 
 Application AI model:
 
@@ -147,10 +170,6 @@ Reason for choosing this approach:
 - Role-based login keeps client and admin flows separate.
 - Booking status and availability checks make the workflow closer to a real appointment system.
 
-Tokens used:
-
-- 110k tokens used in codex.
-
 ### How to Run
 
 1. Create and activate a virtual environment.
@@ -165,8 +184,6 @@ pip install -r requirements.txt
 ```bash
 GROQ_API_KEY=your_groq_api_key
 ADMIN_PASSWORD=admin123
-ADMIN_EMAIL=admin@example.com
-ADMIN_NAME=Admin
 ```
 
 4. Run the app:
@@ -177,43 +194,52 @@ streamlit run app.py
 
 ### Demo Accounts
 
-Client:
+**User:**
+- Just enter appointment details and book!
 
-- Email: `client@example.com`
-- Password: `client123`
-
-Admin:
-
-- Email: `admin@example.com`
+**Admin:**
 - Password: `admin123`
+
+---
 
 ## Part 4: Edge Cases
 
 - Missing booking details in natural language input
 - Invalid AI response or non-JSON model output
-- Empty manual booking form
-- Duplicate signup email
-- Wrong password during login
-- Client attempting to access admin functionality
+- Empty booking form
+- Wrong admin password during login
 - Client attempting to delete another user's booking
-- Client attempting to reschedule another user's booking
-- Client attempting to book or reschedule into an occupied active slot
-- Admin attempting to update a booking into an occupied active slot
-- Cancelled or completed bookings not counted as active
-- Admin deleting a booking that no longer exists
-- Admin changing booking status between pending, confirmed, cancelled, and completed
-- Unparseable date values when calculating active bookings
+- Rapid add/delete operations
+- Model unavailability - automatic fallback
+- Special characters in names
 - No bookings available in client or admin views
 - Empty search/filter results in admin dashboard
 - Missing `GROQ_API_KEY` in `.env`
 
-Suggested flow:
+### Suggested Demo Flow
 
-1. Show sign in/sign up page.
-2. Sign in as client.
-3. Create a booking using natural language.
-4. Show total and active booking counts in sidebar.
-5. Open My Bookings, reschedule a booking, and delete a booking.
-6. Sign out and sign in as admin.
-7. Show all bookings, statistics, status filter, and CRUD controls.
-8. Explain the database, authentication, and AI extraction briefly.
+1. Enter a booking request in natural language (e.g., "Book me a haircut on May 25th at 3 PM")
+2. View the booking in "My Bookings"
+3. Delete or manage the booking
+4. Switch to Admin Mode (password: `admin123`)
+5. View all bookings and statistics
+6. Search, filter, and export bookings
+7. Explain the database, authentication, and AI extraction briefly.
+
+---
+
+## Project Features
+
+✨ **Natural Language Booking** - Book via conversational input  
+✨ **AI-Powered Extraction** - Automatic detail parsing  
+✨ **User Dashboard** - View and manage personal bookings  
+✨ **Admin Dashboard** - Comprehensive booking management  
+✨ **Real-time Stats** - Quick sidebar metrics  
+✨ **Search & Filter** - Find bookings easily  
+✨ **CSV Export** - Download booking data  
+✨ **Password Protected** - Secure admin access  
+
+---
+
+**Version**: 1.0  
+**Last Updated**: May 2026
