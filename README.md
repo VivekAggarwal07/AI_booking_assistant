@@ -4,13 +4,11 @@ Chat-based appointment booking system built with Streamlit, SQLite, and an AI ex
 
 ## Part 1: Problem Understanding
 
-Important: This section must be written by the student without AI tools.
-
 Appointment scheduling is frustrating. Users navigate complex forms, and service providers manage bookings manually. This project solves this by letting users book appointments using natural language instead of filling out tedious forms.
 
-The Problem: Traditional booking systems are time-consuming and error-prone. Users struggle with forms, and admins waste time managing scattered appointment data.
+### The Problem: Traditional booking systems are time-consuming and error-prone. Users struggle with forms, and admins waste time managing scattered appointment data.
 
-The Solution: Our AI-powered system lets users book appointments conversationally. Simply type "I need a haircut on May 25th at 3 PM for John," and the AI extracts the details automatically and books it.
+### The Solution: Our AI-powered system lets users book appointments conversationally. Simply type "I need a haircut on May 25th at 3 PM for John," and the AI extracts the details automatically and books it.
 
 Who Uses It: There are two user types. Regular users can quickly book, view, and delete their own appointments. Admins have a comprehensive dashboard to manage all bookings, view statistics, search and filter by service, and export data to CSV.
 
