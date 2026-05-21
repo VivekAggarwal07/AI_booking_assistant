@@ -647,10 +647,14 @@ def render_admin_stats(appointments):
     chart_col_1, chart_col_2 = st.columns(2)
     with chart_col_1:
         st.subheader("Bookings by service")
-        st.bar_chart(df["Service"].value_counts())
+        service_counts = df["Service"].value_counts()
+        for service, count in service_counts.items():
+            st.metric(service, count)
     with chart_col_2:
-        st.subheader("Bookings by client")
-        st.bar_chart(df["Name"].value_counts().head(10))
+        st.subheader("Top clients (by bookings)")
+        client_counts = df["Name"].value_counts().head(10)
+        for client, count in client_counts.items():
+            st.metric(client, count)
 
 
 def render_admin_bookings(appointments):
